@@ -33,6 +33,28 @@ public class Application2 {
 		 * 김정희 대조영
 		 * 김유신 이사부
 		 */
+		String [] arr = {"홍길동", "이순신", "유관순", "윤봉길", "장영실", "임꺽정", "장보고", "이태백", "김정희", "대조영", "김유신", "이사부"};
+		String [][] one = new String[3][2];
+		String [][] two = new String[3][2];
+		int x = 0;
+		System.out.println("== 1분단 ==");
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 2; j++){
+				one[i][j] = arr[x];
+				x++;
+				System.out.print(one[i][j] + " ");
+			}
+			System.out.println("");
+		}
+		System.out.println("== 2분단 ==");
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 2; j++){
+				two[i][j] = arr[x];
+				x++;
+				System.out.print(two[i][j] + " ");
+			}
+			System.out.println("");
+		}
 
 	}
 

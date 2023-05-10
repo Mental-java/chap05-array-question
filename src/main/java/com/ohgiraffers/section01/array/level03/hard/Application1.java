@@ -24,7 +24,23 @@ public class Application1 {
 		 * -- 출력 예시 --
 		 * 양수 혹은 홀수만 입력해야 합니다.
 		 */
-
+		Scanner sc = new Scanner(System.in);
+		System.out.print("홀수인 양의 정수를 입력하세요 : ");
+		int x = sc.nextInt();
+		int [] arr = new int[x];
+		int a = 1;
+		for(int i = 0; i < arr.length; i++){
+			if(i<=arr.length/2){
+				arr[i] = a;
+				a++;
+				if(i==arr.length/2) a--;
+			}
+			else{
+				a--;
+				arr[i] = a;
+			}
+			System.out.print(arr[i] + " ");
+		}
 	}
 
 }

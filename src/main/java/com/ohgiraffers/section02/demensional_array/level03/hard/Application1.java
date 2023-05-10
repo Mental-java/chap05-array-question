@@ -41,7 +41,56 @@ public class Application1 {
 		 * 검색할 학생 이름을 입력하세요 : 대조영
 		 * 검색하신 대조영은 2분단 두 번째 줄 오른쪽에 있습니다.
 		 */
-
+		String [] arr = {"홍길동", "이순신", "유관순", "윤봉길", "장영실", "임꺽정", "장보고", "이태백", "김정희", "대조영", "김유신", "이사부"};
+		String [][] one = new String[3][2];
+		String [][] two = new String[3][2];
+		int x = 0;
+		System.out.println("== 1분단 ==");
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 2; j++){
+				one[i][j] = arr[x];
+				x++;
+				System.out.print(one[i][j] + " ");
+			}
+			System.out.println("");
+		}
+		System.out.println("== 2분단 ==");
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 2; j++){
+				two[i][j] = arr[x];
+				x++;
+				System.out.print(two[i][j] + " ");
+			}
+			System.out.println("");
+		}
+		String w;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("검색할 학생 이름을 입력하세요 : ");
+		String str = sc.nextLine();
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 2; j++){
+				if(str.equals(one[i][j])){
+					if(j==0){
+						w = "왼쪽";
+					}else{
+						w = "오른쪽";
+					}
+					System.out.printf("검색하신 %s는(은) 2분단 %d 번째 줄 %s에 있습니다.", str, j+1, w);
+				}
+			}
+		}
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 2; j++){
+				if(str.equals(two[i][j])){
+					if(j==0){
+						w = "왼쪽";
+					}else{
+						w = "오른쪽";
+					}
+					System.out.printf("검색하신 %s는(은) 2분단 %d 번째 줄 %s에 있습니다.", str, j+1, w);
+				}
+			}
+		}
 	}
 
 }

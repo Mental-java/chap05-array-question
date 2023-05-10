@@ -1,7 +1,9 @@
 package com.ohgiraffers.section01.array.level04.advanced;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
+
+
+import static java.lang.Integer.parseInt;
 
 public class Application2 {
 
@@ -31,6 +33,55 @@ public class Application2 {
 		 * 4자리 숫자를 입력하세요 : 7416
 		 * 정답입니다.
 		 * */
+		Scanner sc = new Scanner(System.in);
+		int [] arr = new int[4];
+		for(int i = 0; i < arr.length; i++){
+			arr[i] = (int)(Math.random()*9);
+			System.out.print(arr[i]);
+		}
+		System.out.println("");
+
+//		String [] arr1 = new String[arr.length];
+//		for(int i = 0; i<arr1.length; i++){
+//			arr1[i] = Integer.toString(arr[i]);
+//		}
+
+
+		for(int i = 0; i < 10; i++){
+			int b = 0;
+			int s = 0;
+			System.out.printf("%d회 남으셨습니다.\n", 10-i);
+			System.out.println("4자리 숫자를 입력하세요");
+			int x = sc.nextInt();
+			if(arr[0]==x/1000){
+				s++;
+			}else if(x/1000 == arr[1] || x/1000 == arr[2] || x/1000 == arr[3]){
+				b++;
+			}
+			if(arr[1]==x%1000/100){
+				s++;
+			}else if(x%1000/100 == arr[0] || x%1000/100 == arr[2] || x%1000/100 == arr[3]){
+				b++;
+			}
+			if(arr[2]==x%1000%100/10){
+				s++;
+			}else if(x%1000%100/10 == arr[0] || x%1000%100/10 == arr[1] || x%1000%100/10 == arr[3]){
+				b++;
+			}
+			if(arr[3]==x%1000%100%10/1){
+				s++;
+			}else if(x%1000%100%10/1 == arr[0] || x%1000%100%10/1 == arr[1] || x%1000%100%10/1 == arr[2]){
+				b++;
+			}
+			if(s==4){
+				System.out.println("정답입니다.");
+				return;
+			}else{
+				System.out.printf("아쉽네요 %dS %dB 입니다.\n", s, b);
+			}
+
+		}
+		System.out.printf("10번의 기회를 모두 소진하셨습니다. 프로그램을 종료합니다.");
 
 	}
 

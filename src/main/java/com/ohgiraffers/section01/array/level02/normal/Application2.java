@@ -15,7 +15,14 @@ public class Application2 {
 		 * -- 출력 예시 --
 		 * 990101-1******
 		 */
-
+		Scanner sc = new Scanner(System.in);
+		System.out.print("주민등록번호를 입력하세요 :");
+		String str = sc.nextLine();
+		char [] arr = str.toCharArray();
+		for(int i = 0; i < arr.length; i++){
+			if(i>7) arr[i] = '*';
+			System.out.print(arr[i]);
+		}
 	}
 
 }
