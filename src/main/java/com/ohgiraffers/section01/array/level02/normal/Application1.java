@@ -17,7 +17,17 @@ public class Application1 {
 		 * -- 출력 예시 --
 		 * 입력하신 문자열 helloworld에서 찾으시는 문자 l은 3개 입니다.
 		 * */
-
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열을 하나 입력하세요 : ");
+		String str = sc.nextLine();
+		char [] arr = str.toCharArray();
+		System.out.print("검색할 문자를 입력하세요 : ");
+		char c = sc.nextLine().charAt(0);
+		int x = 0;
+		for(int i = 0; i < arr.length; i++){
+			if(arr[i] == c) x++;
+		}
+		System.out.printf("입력하신 문자열 %s에서 찾으시는 문자 %c는 %d개 입니다.", str, c, x);
 	}
 
 }

@@ -26,7 +26,30 @@ public class Application1 {
 		 * W H J X
 		 * W S S J
 		 * */
+		Scanner sc = new Scanner(System.in);
+		System.out.print("가로 행의 수를 입력하세요 : ");
+		int x = sc.nextInt();
+		if(x<1 || x>10){
+			System.out.println("반드시 1~10까지의 정수를 입력해야 합니다. 다시 입력하세요.");
+			System.out.print("가로 행의 수를 입력하세요 : ");
+			x = sc.nextInt();
+		}
+		System.out.print("세로 열의 수를 입력하세요 : ");
+		int y = sc.nextInt();
+		if(y<1 || y>10){
+			System.out.println("반드시 1~10까지의 정수를 입력해야 합니다. 다시 입력하세요.");
+			System.out.print("세로 열의 수를 입력하세요 : ");
+			y = sc.nextInt();
+		}
 
+		char arr[][] = new char [x][y];
+		for(int i = 0; i < x; i++){
+			for(int j = 0; j < y; j++){
+				arr[i][j] = (char)((Math.random()*26)+65);
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println("");
+		}
 	}
 
 }

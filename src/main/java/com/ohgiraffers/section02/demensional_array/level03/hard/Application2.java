@@ -21,7 +21,47 @@ public class Application2 {
 		 *
 		 * 단, 홀수를 입력하지 않은 경우 "홀수만 입력해야 합니다." 출력
 		 * */
-
+		Scanner sc = new Scanner(System.in);
+		System.out.print("홀수 하나를 입력하세요 : ");
+		int x = sc.nextInt();
+		if(x%2==0){
+			System.out.println("홀수만 입력해야 합니다.");
+			System.out.print("홀수 하나를 입력하세요 : ");
+			x = sc.nextInt();
+		}
+		String arr[][] = new String[x][x];
+		int left = -1;
+		int right = x;
+		for(int i = 0; i < x/2+1; i++){
+			for(int j = 0; j < x; j++){
+				if(j<=left || j>=right){
+					arr[i][j] = " ";
+					System.out.print(arr[i][j]);
+				}else{
+					arr[i][j] = "*";
+					System.out.print(arr[i][j]);
+				}
+			}
+			left++;
+			right--;
+			System.out.println("");
+		}
+		left -= 2;
+		right += 2;
+		for(int i = 0; i < x/2; i++){
+			for(int j = 0; j < x; j++){
+				if(j<=left || j>=right){
+					arr[i][j] = " ";
+					System.out.print(arr[i][j]);
+				}else{
+					arr[i][j] = "*";
+					System.out.print(arr[i][j]);
+				}
+			}
+			left--;
+			right++;
+			System.out.println("");
+		}
 	}
 
 }
